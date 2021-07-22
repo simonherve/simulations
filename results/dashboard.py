@@ -265,7 +265,7 @@ st.markdown("# Simulation results")
 
 
 curves_param = pd.read_csv("data.csv", index_col=0).values.tolist()
-#st.write(len(curves_param))
+
 tab_df = []
 index = 1
 for i in curves_param:
@@ -282,8 +282,7 @@ for i in curves_param:
 	tab_df.append(df)
 	st.subheader(f"curve {index}: " +  file)
 	index +=1
-#	st.dataframe(df)
-#	plot_data(df, [100, 1000], "NtD")
+
 st.header(f"Column: {output} / demand: {demand} ")
 plot_data(tab_df, demand, output)
 index = 1
@@ -291,25 +290,3 @@ for elem in tab_df:
 	st.subheader(f"curve {index}: ")
 	st.dataframe(elem)
 	index +=1
-
-
-
-#test = init_curves(nbcurves)
-#st.write(test)
-
-
-#curvetest = set_parameters(curves)
-#st.write(curvetest)
-
-
-#file = f"{model}{city}{distance_tag(distance)}R{radius}{transshipment_tag(model, transshipmentpoint)}VTO90VTI25{dronespeed_tag(model, dronespeed)}{truck_tag(model)}{drone_tag(model)}{payload_tag(model, payload)}.csv"
-#df = pd.read_csv(file, index_col=0)
-#df = transformation(df)
-#df = apply_formula(df, [100, 1000], "NtD")
-
-
-#st.dataframe(df)
-#plot_data(df, [100, 1000], "NtD")
-
-
-#st.header(file)
